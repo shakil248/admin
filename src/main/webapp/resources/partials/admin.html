@@ -1,0 +1,40 @@
+<style>
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    float: left;
+    border: 1px solid #000;
+    border-bottom-width: 0;
+    margin: 3px 3px 0px 3px;
+    padding: 5px 5px 0px 5px;
+    background-color: #CCC;
+    color: #696969;
+}
+#mainView {
+    border: 1px solid black;
+	clear: both;
+	padding: 0 1em;
+}
+.active {
+    background-color: #FFF;
+    color: #000;
+}
+</style>
+
+<div ng-if="isLogged()"><a href="" ng-click="logout()">Logout</a></div>
+<div id="tabs" ng-controller="adminCtrl">
+		<ul>
+			<li ng-repeat="tab in tabs"
+				ng-class="{active:isActiveTab(tab.url)}"
+				ng-click="onClickTab(tab)">{{tab.title}}</li>
+		</ul>
+		<div id="mainView">
+			<div ng-include="currentTab"></div>
+		</div>
+		{{saveStatus}}
+</div>
+
+
