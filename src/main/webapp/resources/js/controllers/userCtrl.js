@@ -18,7 +18,7 @@ app.controller('userCtrl', function($scope,userService,sessionService, loginServ
     	
 	};
 	
-	 $scope.getStates=function(){
+	 function getStates(){
 		   userService.getStates($scope);
 	};
 	
@@ -26,7 +26,7 @@ app.controller('userCtrl', function($scope,userService,sessionService, loginServ
 		loginService.logout();
 	};
 	
-	$scope.getStates();
+	getStates();
 	
 	$scope.checkUserId=function(){
 		userService.getUser($scope.user.userId).then(function(user) {
