@@ -15,8 +15,6 @@
 <spring:url value="/resources/js/services/sessionService.js" var="sessionServiceJS" />
 <spring:url value="/resources/js/services/adminService.js" var="adminServiceJS" />
 
-
-
 <script src="${angularJS}"></script>
 <script src="${angularRouteJS}"></script>
 <script src="${appJS}"></script>

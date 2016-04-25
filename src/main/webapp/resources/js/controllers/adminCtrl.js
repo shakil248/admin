@@ -26,6 +26,8 @@ app.controller('adminCtrl', ['$scope','adminService','loginService', function ($
     getProductCategories();
     $scope.onClickTab = function (tab) {
     $scope.saveStatus="";
+    $scope.productExists = false;
+    $scope.productCatExists = false;
     	 
     	if(tab.id == '1'){
     		getProductCategories();
@@ -54,12 +56,18 @@ app.controller('adminCtrl', ['$scope','adminService','loginService', function ($
      function  getProductCategories(){
     	adminService.getProductCategories().then(function(pCats) {
     		$scope.productCategories = pCats;
+    		if(pCats!=""){
+    			$scope.productCatExists = true;
+    		}
     	});
 	};
 	
 	 function  getAllProducts(){
 		adminService.getAllProducts().then(function(products){
 			$scope.products = products;
+			if(products!=""){
+				$scope.productExists = true;
+			}
 		});
 	};
 	
@@ -71,7 +79,7 @@ app.controller('adminCtrl', ['$scope','adminService','loginService', function ($
 	    		}
 	    	});
 		};
-		function getAllUsers(){
+	function getAllUsers(){
 	    	adminService.getAllUsers().then(function(users) {
 	    		$scope.users = users;
 	    		if(users!=""){
@@ -108,10 +116,14 @@ app.controller('adminCtrl', ['$scope','adminService','loginService', function ($
     $scope.createProduct=function(product){
     		adminService.createProduct(product,$scope);
 	};
-	
+
 	$scope.clearProduct = function(product){
 		$scope.product=null;
 		 $scope.errorMessage="";
+	};
+	
+	$scope.clearOrder = function(order){
+		order = null;
 	};
 	
 	$scope.isLogged = function(){

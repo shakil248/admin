@@ -43,7 +43,6 @@ app.controller('userCtrl', function($scope,userService,sessionService, loginServ
 	
 	$scope.clearUser = function(user){
 		$scope.user=null;
-		 userService.clearImage();
 		 $scope.message="";
 	};
 	

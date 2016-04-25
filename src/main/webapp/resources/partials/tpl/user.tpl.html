@@ -4,8 +4,8 @@
 Search <input type="text" ng-model="searchKey"/>
 </div>
 <div style="margin-top: 20px;">
-<table>
-<tr><th>Name</th><th>Password</th><th>Email</th><th>House No</th><th>Street</th><th>City</th><th>State</th><th>Country</th></tr>
+<table border="1px">
+<tr><th>Name</th><th>Password</th><th>Email</th><th>House No</th><th>Street</th><th>City</th><th>State</th><th>Country</th><th>Action</th></tr>
 <tr ng-repeat="x in users | filter : searchKey ">
 <td>{{x.userId}}</td><td>{{x.password}}</td><td>{{x.emailId}}</td><td>{{x.address.houseNo}}</td><td>{{x.address.street}}</td><td>{{x.address.city}}</td>
 <td>{{x.address.state}}</td><td>{{x.address.country}}</td><td><button ng-click="editUser(x)">Edit</button></td>
@@ -16,7 +16,7 @@ Search <input type="text" ng-model="searchKey"/>
 <form role="form" name="userFrom">
 	<div>
 		<label for="InputUserName">User Id</label>
-		<input type="text" placeholder="Enter Name" id="InputLoginId" required ng-model="user.userId" style="margin-left: 44px;">
+		<input type="text" placeholder="Enter Name" id="InputLoginId" required ng-model="user.userId" style="margin-left: 69px;">
 	</div>
 	<div>
 		<label for="InputPassword">Password</label>
@@ -25,7 +25,7 @@ Search <input type="text" ng-model="searchKey"/>
 
 	<div>
 		<label for="InputEmailId">Email Id</label>
-		<input type="email" placeholder="abc@xyz.com" id="InputEmailId" required ng-model="user.emailId" style="margin-left: 60px;">
+		<input type="email" placeholder="abc@xyz.com" id="InputEmailId" required ng-model="user.emailId" style="margin-left: 61px;">
 		
 	</div>
 	

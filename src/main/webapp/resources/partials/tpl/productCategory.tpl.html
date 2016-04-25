@@ -1,6 +1,6 @@
 <div>
-<div style="margin-top: 20px;">
-<table>
+<div style="margin-top: 20px;" ng-if="productCatExists">
+<table border="1px">
 <tr>
 <th>Name</th>
 <th>Is Active</th>
@@ -22,7 +22,7 @@
 	</div>
 	<div>
 		<label for="InputProductIsActive">Product Is Active</label>
-		<input type="boolean" placeholder="Enter Product Category is Active" id="InputProductIsActive" required ng-model="productCat.isActive" style="margin-left: 55px;">
+		<input type="boolean" placeholder="Enter Product Category is Active" id="InputProductIsActive" required ng-model="productCat.isActive" style="margin-left: 103px;">
 	</div>
 	<div>
 	<button class="btn btn-default" type="submit" ng-click="createProductCat(productCat)" ng-disabled="productCatForm.$invalid" style="margin-left: 119px; margin-top: 30px">Submit</button>	
