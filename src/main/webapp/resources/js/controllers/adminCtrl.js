@@ -123,9 +123,11 @@ app.controller('adminCtrl', ['$scope','adminService','loginService', function ($
 	};
 	
 	$scope.clearOrder = function(order){
-		order = null;
+		$scope.order = null;
 	};
-	
+	$scope.clearUser = function(user){
+		$scope.user = null;
+	};
 	$scope.isLogged = function(){
 		return loginService.isLogged();
 	};
